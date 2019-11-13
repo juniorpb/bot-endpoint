@@ -1,4 +1,4 @@
-var fs = require("fs");
+const fs = require("fs");
 
 function robot(nameProject, nameService){
 
@@ -8,10 +8,10 @@ function robot(nameProject, nameService){
     for(file = 0; file < 3; file ++){
 
         //  endpoint directory
-        const data = fs.readFileSync(`../${nameProject}/backend/api/config/env/${endpointFiles[file]}.json` , "utf8")
+        const data = fs.readFileSync(`../${nameProject}/backend/api/config/env/${endpointFiles[file]}.json`);
             
         // parse json to array
-        var jsonData = JSON.parse(data);
+        const jsonData = JSON.parse(data);
         
         console.log(`${endpointFiles[file]}:\n${jsonData.soap[nameService]["endpoint"]}\n`);       
     }
